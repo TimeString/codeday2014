@@ -31,19 +31,19 @@ public class Droid {
 	public Droid(Bitmap bitmap, double maxX, double maxY) {
 		Random random = new Random();
 		
-		this.bitmap = bitmap;
-		//Bitmap tmp = Bitmap.createBitmap(30, 30, Bitmap.Config.ARGB_8888);
+		//this.bitmap = bitmap;
+		this.bitmap = Bitmap.createBitmap(30, 30, Bitmap.Config.ARGB_8888);
 		//this.bitmap = tmp.copy(Bitmap.Config.ARGB_8888, false);
 		//bitmap.setPremultiplied(true);
-		//this.bitmap.eraseColor(Color.TRANSPARENT);
-		//Canvas canvas = new Canvas(bitmap);
+		this.bitmap.eraseColor(Color.TRANSPARENT);
+		Canvas canvas = new Canvas(this.bitmap);
 		// set drawing colour
-		//Paint p = new Paint();
-		//p.setColor(Color.rgb(random.nextInt(256), random.nextInt(256), random.nextInt(256)));
+		Paint p = new Paint();
+		p.setColor(Color.rgb(random.nextInt(256), random.nextInt(256), random.nextInt(256)));
 
 		// draw a line onto the canvas
-		//canvas.drawLine(0, 0, 30, 30, p);
-		//canvas.drawLine(25, 5, 5, 25, p);
+		canvas.drawLine(0, 0, 30, 30, p);
+		canvas.drawLine(25, 5, 5, 25, p);
 		
 		nowX = random.nextDouble() * maxX;
 		nowY = random.nextDouble() * maxY;
